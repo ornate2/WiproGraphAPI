@@ -8,7 +8,9 @@
   "dependencies": {
     "@sap/cds": "^7",
     "@sap/cds-hana": "^2",
-    "express": "^4"
+    "@sap/xssec": "^4.1.3",
+    "express": "^4",
+    "node-cron": "^3.0.3"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
