@@ -1,0 +1,344 @@
+<mvc:View controllerName="wiprographui.controller.WiproGraphUI"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"  xmlns:f="sap.ui.layout.form"
+     xmlns:uxap="sap.uxap"  xmlns:forms="sap.ui.layout.form"    xmlns:core="sap.ui.core"  xmlns:u="sap.ui.unified"
+ xmlns:layout="sap.ui.layout"  xmlns:ta="sap.ui.table"  xmlns:l="sap.ui.layout"
+ xmlns="sap.m" xmlns:ui="sap.ui.table"
+ xmlns:t="sap.ui.table">
+      <App id="app">
+        <Page id="scroll" title="{i18n>title}" >
+            <content>
+              <IconTabBar id="DisposalAssetIconTabId"
+                    class="sapUiResponsiveContentPadding" select="IconTabBarSelect">
+                    <items>
+                        <IconTabFilter icon="sap-icon://request" id="data_Form"
+                            text="{i18n>NEw}" key="PO_Form_Details" tooltip="{i18n>NEw}"
+                            class="MasterDataIconTabBar" design="Vertical">
+                               
+                            <ta:Table id="New_Form_Details"
+                                selectionMode="None" rows="{PoDataModel>/}" sort="sortDeliveryDate"
+                                ariaLabelledBy="title"  alternateRowColors="true">
+                                <ta:extension>
+                               
+                                </ta:extension>
+                                <ta:columns>
+                                   
+                                    <ta:Column >
+                                        <Label text="{i18n>PONumber}" tooltip="{i18n>PONumber}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>PONumber}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                    <!-- <ta:Column >
+                                        <Label text="{i18n>Buyer}"
+                                            tooltip="{i18n>Buyer}" design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>Buyer}" />
+                                        </ta:template>
+                                    </ta:Column> -->
+                                    <ta:Column >
+ 
+                                        <Label text="{i18n>POValue}" tooltip="{i18n>POValue}"
+                                            design="Bold"></Label>
+ 
+                                        <ta:template>
+                                            <Text text="{PoDataModel>POValue}"></Text>
+                                        </ta:template>
+                                    </ta:Column>
+                                    <ta:Column >
+                                        <Label text="{i18n>POCurrency}" tooltip="{i18n>POCurrency}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>POCurrency}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                   
+                                    <ta:Column >
+                                        <Label text="{i18n>Vendor}" tooltip="{i18n>Vendor}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>Vendor}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                <ta:Column >
+                                        <Label text="{i18n>VendorName}" tooltip="{i18n>VendorName}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>VendorName}" />
+                                        </ta:template>
+                                    </ta:Column>
+ 
+                                </ta:columns>
+                            </ta:Table>
+                           
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://bbyd-active-sales" id="data_BFM"
+                            text="{i18n>BFM}" key="PO_Form_Details" tooltip="{i18n>BFM}"
+                            class="MasterDataIconTabBar" design="Vertical">
+                             <ta:Table id="BFM_Form_Details"
+                                selectionMode="None" rows="{PoDataModel>/}" sort="sortDeliveryDate"
+                                ariaLabelledBy="title"  alternateRowColors="true">
+                                <ta:extension>
+                               
+                                </ta:extension>
+                                <ta:columns>
+                                   
+                                    <ta:Column >
+                                        <Label text="{i18n>PONumber}" tooltip="{i18n>PONumber}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>PONumber}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                    <!-- <ta:Column >
+                                        <Label text="{i18n>Buyer}"
+                                            tooltip="{i18n>Buyer}" design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>Buyer}" />
+                                        </ta:template>
+                                    </ta:Column> -->
+                                    <ta:Column >
+ 
+                                        <Label text="{i18n>POValue}" tooltip="{i18n>POValue}"
+                                            design="Bold"></Label>
+ 
+                                        <ta:template>
+                                            <Text text="{PoDataModel>POValue}"></Text>
+                                        </ta:template>
+                                    </ta:Column>
+                                    <ta:Column >
+                                        <Label text="{i18n>POCurrency}" tooltip="{i18n>POCurrency}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>POCurrency}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                   
+                                    <ta:Column >
+                                        <Label text="{i18n>Vendor}" tooltip="{i18n>Vendor}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>Vendor}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                <ta:Column >
+                                        <Label text="{i18n>VendorName}" tooltip="{i18n>VendorName}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>VendorName}" />
+                                        </ta:template>
+                                    </ta:Column>
+ 
+                                </ta:columns>
+                            </ta:Table>
+                           
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://account" id="data_Clusterhead"
+                            text="{i18n>Clusterhead}" key="PO_Form_Details" tooltip="{i18n>Clusterhead}"
+                            class="MasterDataIconTabBar" design="Vertical">
+                             <ta:Table id="Clusterhead_Form_Details"
+                                selectionMode="None" rows="{PoDataModel>/}" sort="sortDeliveryDate"
+                                ariaLabelledBy="title"  alternateRowColors="true">
+                                <ta:extension>
+                                    <!-- <OverflowToolbar>
+                                        <ToolbarSpacer />
+                                       
+                                        <Button  id="TriggerWF2" text="{i18n>Trigger}"
+                                            press="naivgateToTaskUI" type="Accept"></Button>
+                                   
+                                       
+                                    </OverflowToolbar> -->
+                                </ta:extension>
+                                <ta:columns>
+                                   
+                                    <ta:Column >
+                                        <Label text="{i18n>PONumber}" tooltip="{i18n>PONumber}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>PONumber}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                   
+                                    <ta:Column >
+ 
+                                        <Label text="{i18n>POValue}" tooltip="{i18n>POValue}"
+                                            design="Bold"></Label>
+ 
+                                        <ta:template>
+                                            <Text text="{PoDataModel>POValue}"></Text>
+                                        </ta:template>
+                                    </ta:Column>
+                                    <ta:Column >
+                                        <Label text="{i18n>POCurrency}" tooltip="{i18n>POCurrency}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>POCurrency}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                   
+                                    <ta:Column >
+                                        <Label text="{i18n>Vendor}" tooltip="{i18n>Vendor}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>Vendor}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                <ta:Column >
+                                        <Label text="{i18n>VendorName}" tooltip="{i18n>VendorName}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>VendorName}" />
+                                        </ta:template>
+                                    </ta:Column>
+ 
+                                </ta:columns>
+                            </ta:Table>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://approvals" id="data_approver"
+                            text="{i18n>Approver}" key="PO_Form_Details" tooltip="{i18n>Approver}"
+                            class="MasterDataIconTabBar" design="Vertical">
+                             <ta:Table id="Approver_Form_Details"
+                                selectionMode="None" rows="{PoDataModel>/}" sort="sortDeliveryDate"
+                                ariaLabelledBy="title"  alternateRowColors="true">
+                                <ta:extension>
+                                   
+                                </ta:extension>
+                                <ta:columns>
+                                   
+                                    <ta:Column >
+                                        <Label text="{i18n>PONumber}" tooltip="{i18n>PONumber}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>PONumber}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                    <!-- <ta:Column >
+                                        <Label text="{i18n>Buyer}"
+                                            tooltip="{i18n>Buyer}" design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>Buyer}" />
+                                        </ta:template>
+                                    </ta:Column> -->
+                                    <ta:Column >
+ 
+                                        <Label text="{i18n>POValue}" tooltip="{i18n>POValue}"
+                                            design="Bold"></Label>
+ 
+                                        <ta:template>
+                                            <Text text="{PoDataModel>POValue}"></Text>
+                                        </ta:template>
+                                    </ta:Column>
+                                    <ta:Column >
+                                        <Label text="{i18n>POCurrency}" tooltip="{i18n>POCurrency}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>POCurrency}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                   
+                                    <ta:Column >
+                                        <Label text="{i18n>Vendor}" tooltip="{i18n>Vendor}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>Vendor}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                <ta:Column >
+                                        <Label text="{i18n>VendorName}" tooltip="{i18n>VendorName}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>VendorName}" />
+                                        </ta:template>
+                                    </ta:Column>
+ 
+                                </ta:columns>
+                            </ta:Table>
+                    </IconTabFilter>
+                     <IconTabFilter icon="sap-icon://employee-rejections" id="data_Reject"
+                            text="{i18n>btnReject}" key="PO_Form_Details" tooltip="{i18n>Approver}"
+                            class="MasterDataIconTabBar" design="Vertical">
+                             <ta:Table id="Reject_Form_Details"
+                                selectionMode="None" rows="{PoDataModel>/}" sort="sortDeliveryDate"
+                                ariaLabelledBy="title"  alternateRowColors="true">
+                                <ta:extension>
+                                   
+                                </ta:extension>
+                                <ta:columns>
+                                   
+                                    <ta:Column >
+                                        <Label text="{i18n>PONumber}" tooltip="{i18n>PONumber}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>PONumber}" id=""/>
+                                        </ta:template>
+                                    </ta:Column>
+                                    <!-- <ta:Column >
+                                        <Label text="{i18n>Buyer}"
+                                            tooltip="{i18n>Buyer}" design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>Buyer}" />
+                                        </ta:template>
+                                    </ta:Column> -->
+                                    <ta:Column >
+ 
+                                        <Label text="{i18n>POValue}" tooltip="{i18n>POValue}"
+                                            design="Bold"></Label>
+ 
+                                        <ta:template>
+                                            <Text text="{PoDataModel>POValue}"></Text>
+                                        </ta:template>
+                                    </ta:Column>
+                                    <ta:Column >
+                                        <Label text="{i18n>POCurrency}" tooltip="{i18n>POCurrency}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>POCurrency}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                   
+                                    <ta:Column >
+                                        <Label text="{i18n>Vendor}" tooltip="{i18n>Vendor}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>Vendor}" />
+                                        </ta:template>
+                                    </ta:Column>
+                                <ta:Column >
+                                        <Label text="{i18n>VendorName}" tooltip="{i18n>VendorName}"
+                                            design="Bold" />
+                                        <ta:template>
+                                            <Text text="{PoDataModel>VendorName}" />
+                                        </ta:template>
+                                    </ta:Column>
+ 
+                                </ta:columns>
+                            </ta:Table>
+                    </IconTabFilter>
+                    </items>
+                </IconTabBar>
+ 
+             
+            </content>
+            <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer />
+                   
+                        <Button icon="sap-icon://save"
+                            text="{i18n>btnSubmitApproval}" press="SubmitValidation"
+                            type="Accept"></Button>
+                           
+                        <Button icon="sap-icon://excel-attachment"
+                            text="{i18n>Approver}" press="ApproverPress"
+                            class="buttonClass" type="Accept"></Button>
+                        <Button icon="sap-icon://curriculum"
+                            text="{i18n>btnReject}" press="RejectPress"
+                            class="buttonClass" type="Reject"></Button>
+                       
+                    </OverflowToolbar>
+                </footer>
+        </Page>
+    </App>
+ 
+</mvc:View>
+ 
+ 
